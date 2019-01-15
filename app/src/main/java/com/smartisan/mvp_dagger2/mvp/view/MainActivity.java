@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +33,7 @@ import com.trello.rxlifecycle2.LifecycleProvider;
 import javax.inject.Inject;
 
 
-public class MainActivity extends AppCompatActivity implements NewsInfoContract.View, NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NewsInfoContract.View, NavigationView.OnNavigationItemSelectedListener {
 
     @Inject
     NewsInfoPresenter mPresenter;
@@ -52,19 +51,14 @@ public class MainActivity extends AppCompatActivity implements NewsInfoContract.
         mDialog.setTitle(R.string.dialog_get_info);
         mContent = findViewById(R.id.tv_main_content);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -72,8 +66,8 @@ public class MainActivity extends AppCompatActivity implements NewsInfoContract.
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ImageView ic_head_portrait = findViewById(R.id.ic_head_portrait);
-        Glide.with(this).load(Constant.ADDRESS_HEADER_PORTRAIT).into(ic_head_portrait);
+        ImageView head_portrait = navigationView.getHeaderView(0).findViewById(R.id.ic_head_portrait);
+        Glide.with(this).load(Constant.ADDRESS_HEADER_PORTRAIT).into(head_portrait);
     }
 
     @Override
@@ -145,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NewsInfoContract.
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            mPresenter.getNewsInfo(lifecycleProvider,Constant.DEFAULT_TYPE);
+            mPresenter.getNewsInfo(lifecycleProvider, Constant.DEFAULT_TYPE);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

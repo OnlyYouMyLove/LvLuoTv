@@ -23,4 +23,8 @@
         </activity>
     </application>
 
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+
 </manifest>
