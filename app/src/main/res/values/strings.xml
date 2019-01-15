@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">绿萝卫视</string>
+    <string name="get_news">获取数据</string>
+    <string name="default_news">Hello World!</string>
+    <string name="dialog_get_info">获取数据中</string>
+    <string name="toast_net_tip">请检查网络设置是否正确</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Mr.Fu</string>
+    <string name="nav_header_subtitle">fkq339@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>
