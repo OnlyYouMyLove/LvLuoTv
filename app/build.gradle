@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.smartisan.mvp_dagger2"
+        applicationId "com.smartisan.lvluotv"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -47,6 +47,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.shuyu:GSYVideoPlayer:6.0.3'
+    implementation 'com.yanzhikai:TextPathView:0.1.3'
+    implementation 'org.byteam.superadapter:superadapter:3.6.8'
     implementation project(':netlibrary')
     implementation project(':utils')
 }

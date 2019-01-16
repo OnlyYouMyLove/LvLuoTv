@@ -1,6 +1,6 @@
 package com.smartisan.netlibrary.net.service;
 
-import com.smartisan.netlibrary.entity.NewsInfo;
+import com.smartisan.netlibrary.entity.request.NewsInfo;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
